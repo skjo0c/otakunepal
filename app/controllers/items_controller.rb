@@ -6,14 +6,13 @@ class ItemsController < ApplicationController
 
 
 	def create
-		@items = Item.create(item_params)
-		if @items.save
+		@item = Item.create(item_params)
+		if @item.valid?
 			flash[:success] = "You have successfully added the item"
-			redirect_to root_path
 		else
-			render 'create'
+			flash[:alert] = "Woops! Looks like there has been error. Please enter valid data."
 		end
-
+		redirect_to root_path
 	end
 
 
