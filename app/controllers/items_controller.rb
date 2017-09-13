@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
 	def index
-		@items = Item.all
+		@items = Item.order("created_at DESC")
 	end
 
 
@@ -16,11 +16,26 @@ class ItemsController < ApplicationController
 	end
 
 
+	def edit
+		@item = Item.find(params[:id])
+	end
+
+	
+	def update
+		@item = Item.find(params[:id])
+		if @item.update(item_params)
+			redirect_to root_path
+		else
+			redirect_to edit_item_path(params[:id])
+		end
+	end
+
+
 	private
 
 	def item_params
 		
-		params.require(:item).permit(:item_name, :item_price, :required_time, :return_time, :mobile)
+		params.require(:item).permit(:item_name, :item_detail, :item_price, :required_time, :return_time, :mobile)
 	end
 
 end

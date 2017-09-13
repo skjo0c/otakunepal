@@ -1,7 +1,8 @@
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Add Items
-</button>
-
+<%if user_signed_in?%>
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal", style= "margin-bottom: 20px">
+    Add Items
+  </button>
+<%end%>
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -14,14 +15,14 @@
         <%= simple_form_for Item.new do |f| %>
           <div class = "add_item_form">            
               <%= f.input :item_name %>
+              <%= f.input :item_detail%>
               <%= f.input :item_price %>
-              <%= f.input :required_time %>
-              <%= f.input :return_time %>
-              <%= f.input :mobile, as: :tel %>
+              <%= f.label 'Item Picture' %><br>
+              <%= f.file_field :photo %>
           </div>
           <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <%= f.submit 'Add Item' %>
+              <%= f.submit 'Add Item', class: 'btn btn-primary' %>
           </div>
         <% end %>
       </div>

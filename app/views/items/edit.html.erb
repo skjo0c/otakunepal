@@ -1,0 +1,10 @@
+<%= simple_form_for @item, method: :patch do |f| %>         
+        <%= f.input :item_name %>
+        <%= f.input :item_detail%>
+        <%= f.input :item_price %>
+        <%= f.input :required_time %>
+        <%= f.input :return_time %>
+        <%= f.input :mobile, as: :tel %>
+        <%= f.submit 'Save Item', class: 'btn btn-success', data:{confirm: "Are you sure?"} %>
+        <%= link_to 'Cancel', root_path, class: 'btn btn-warning' %>
+<% end %>

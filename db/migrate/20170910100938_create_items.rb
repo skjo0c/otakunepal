@@ -3,10 +3,11 @@ class CreateItems < ActiveRecord::Migration[5.0]
     create_table :items do |t|
       t.timestamps
       t.text :item_name, null: false
+      t.text :item_detail, null: false
       t.integer :item_price, null: false
-      t.datetime :required_time, null: false
-      t.datetime :return_time, null: false
-      t.string :mobile, null: false
+      t.string :photo
+      t.boolean :rented, default: false
     end
+    add_index :items, :item_id
   end
 end

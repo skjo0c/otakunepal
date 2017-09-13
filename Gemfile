@@ -5,6 +5,12 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+#carrierwave
+gem 'carrierwave'
+#devise
+gem 'devise'
+#to make top new items
+gem 'acts_as_list'
 #form
 gem 'simple_form'
 #bootstrap

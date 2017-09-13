@@ -1,17 +1,5 @@
 <%= render partial: "layouts/modal"%>
 
-<% @items.each do |item|%>
-	<div class = "panel-panel-default">
-		<div class = "panel-body">
-			<blockquote>
-				<h2> <%= item.item_name %>
-				<h4> <%= item.item_price %>
-				<h4> <%= item.required_time %>
-				<h4> <%= item.return_time %>
-				<h4> <%= item.mobile%>
-			</blockquote>
-		</div>
-	</div>
-<% end %>
+<%= render partial: "layouts/itemviewer"%>
 
 <!-- item_name: "Chopper Hat", item_price: 200, required_time: "20/09/2017".to_datetime, return_time: "27/09/2017".to_datetime, mobile: "9813227498" -->

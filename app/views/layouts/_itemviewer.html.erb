@@ -1,0 +1,42 @@
+<div class="row">
+  <% @items.each_with_index do |item, j| %>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h1 class="item_name"><%= item.item_name %></h1>
+        </div>
+        <div class="panel-body">
+        
+          <blockquote>
+           
+           <h4>Price: <%= item.item_price %></h4>
+
+
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading panel-heading-wiki" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_<%= j %>" aria-expanded="false" aria-controls="collapse_<%= j %>">
+                      Item Details
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapse_<%= j %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                    <%= item.item_detail %>
+                    <%= link_to 'More...'%>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </blockquote>
+
+          <br>
+          <%= link_to 'Rent', item_path(item), class: 'btn btn-success', data:{confirm: "Are you sure?"} %>
+          <%= link_to 'Edit', edit_item_path(item), class: 'btn btn-warning' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+</div>

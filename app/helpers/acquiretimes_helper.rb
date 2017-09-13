@@ -1,0 +1,2 @@
+module AcquiretimesHelper
+end
