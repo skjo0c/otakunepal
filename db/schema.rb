@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20170913095620) do
     t.string   "username"
     t.string   "FirstName"
     t.string   "LastName"
-    t.integer  "mobile",                              null: false
+    t.string   "mobile",                              null: false
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "photo"

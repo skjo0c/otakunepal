@@ -33,7 +33,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :username, unique: true
       t.string :FirstName
       t.string :LastName
-      t.integer :mobile, null: false
+      t.string :mobile, null: false
 
       t.timestamps null: false
     end

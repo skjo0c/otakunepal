@@ -28,7 +28,7 @@
 
       <div class = "fields">
         <%= f.label :mobile %><br>
-        <%= f.telephone_field :mobile, as: :integer, required: true, autofocus: false %>
+        <%= f.telephone_field :mobile, input_html: {max: 10, min: 10}, required: true, autofocus: false %>
       </div>
 
       <div class = "fields">

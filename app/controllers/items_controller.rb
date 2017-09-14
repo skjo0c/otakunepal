@@ -38,6 +38,9 @@ before_action :authenticate_user!, only: [:new, :create]
 		end
 	end
 
+	def show
+		render template: "itemdetails/show"
+	end
 
 	private
 
