@@ -6,12 +6,13 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/scss" href="scss/master.scss">
+    <link href="https://fonts.googleapis.com/css?family=Zilla+Slab+Highlight" rel="stylesheet">
   </head>
 
   <body>
   	<%= render partial: 'layouts/navbar'%>
     <%= render 'layouts/messages' %>
-    <%= render partial: 'shared/flash_messages' %>
     <%= yield %>
   </body>
 </html>

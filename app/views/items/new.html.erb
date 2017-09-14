@@ -1,0 +1,13 @@
+<%= simple_form_for Item.new do |f| %>
+  <div class = "add_item_form">            
+      <%= f.input :item_name %>
+      <%= f.input :item_detail%>
+      <%= f.input :item_price %>
+      <%= f.label 'Item Picture' %><br>
+      <%= f.file_field :photo %>
+  </div>
+  <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <%= f.submit 'Add Item', class: 'btn btn-primary' %>
+  </div>
+<% end %>

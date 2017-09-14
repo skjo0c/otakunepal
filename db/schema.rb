@@ -23,14 +23,13 @@ ActiveRecord::Schema.define(version: 20170913095620) do
   create_table "items", force: :cascade do |t|
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.integer  "user_id"
     t.text     "item_name",                   null: false
     t.text     "item_detail",                 null: false
     t.integer  "item_price",                  null: false
     t.string   "photo"
     t.boolean  "rented",      default: false
-    t.integer  "user_id"
     t.index ["user_id"], name: "index_items_on_user_id"
-    t.index [nil], name: "index_items_on_item_id"
   end
 
   create_table "users", force: :cascade do |t|

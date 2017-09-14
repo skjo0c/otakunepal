@@ -1,18 +1,26 @@
 class ItemsController < ApplicationController
 
+before_action :authenticate_user!, only: [:new, :create]
+
 	def index
 		@items = Item.order("created_at DESC")
 	end
 
+	def new
+		@item = Item.new
+	end
+
 
 	def create
-		@item = Item.create(item_params)
+		@item = current_user.items.create(item_params)
 		if @item.valid?
 			flash[:success] = "You have successfully added the item"
+			redirect_to root_path
 		else
 			flash[:alert] = "Woops! Looks like there has been error. Please enter valid data."
+			render :new, status: :unprocessable_entity
 		end
-		redirect_to root_path
+		
 	end
 
 
@@ -35,7 +43,7 @@ class ItemsController < ApplicationController
 
 	def item_params
 		
-		params.require(:item).permit(:item_name, :item_detail, :item_price, :required_time, :return_time, :mobile)
+		params.require(:item).permit(:item_name, :item_detail, :item_price, :photo)
 	end
 
 end
