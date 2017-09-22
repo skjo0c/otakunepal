@@ -24,7 +24,8 @@
                 <div id="collapse_<%= j %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                   <div class="panel-body">
                     <%= item.item_detail %>
-                    <%= link_to 'Click here for images...', item_path(item.id)%>
+                    <%= link_to 'Click here for images...', item_path(item.id)%> 
+                            <!--goes to itemdetails/show.html.erb-->
                   </div>
                 </div>
               </div>
@@ -32,8 +33,11 @@
           </blockquote>
 
           <br>
+          
+          <!--button for renting-->
           <% if user_signed_in? %>
-            <%= link_to 'Rent', item_path(item), class: 'btn btn-success', data:{confirm: "Are you sure?"} %>
+            <%= link_to 'Rent', '#rentModal', class: 'btn btn-success', "data-toggle" => "modal", "data-target" => "#rentModal"%>
+            <%= render partial: "layouts/rentModal"%>
             <%= link_to 'Edit', edit_item_path(item), class: 'btn btn-warning' %>
           <% end %>
 

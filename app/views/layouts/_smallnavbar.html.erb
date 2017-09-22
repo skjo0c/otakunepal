@@ -1,0 +1,28 @@
+<nav class="class="visible-md-block visible-lg-block navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <%= image_tag "brand.png", class: "bimage" %>
+          <a href="/">OtakuNepal</a>
+        </div>
+
+        <div class= "useraccount>
+        	<% if user_signed_in? %>
+              <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  <%= current_user.username %>
+                  <span class="caret"></span>
+                </button>
+                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <br>
+                    <li><span class="prof_opt"><%= link_to 'New Post', new_item_path %></span></li><br><br>
+                    <li><span class="prof_opt"><%= link_to 'Edit Settings', edit_user_registration_path %></span></li><br><br>
+                    <li><span class="prof_opt"><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></span></li><br><br>
+                    
+                  <% else %>
+                    <span class="enterprocess"><%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary' %></span>
+                    <span class="enterprocess", style = "margin-right: 5px"><%= link_to 'Log In', new_user_session_path, class: 'btn btn-primary'  %></span>
+              </div>
+  	      <% end %>
+        </div>
+      </div>
+  </nav>

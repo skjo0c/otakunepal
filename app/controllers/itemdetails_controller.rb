@@ -1,5 +1,11 @@
 class ItemdetailsController < ApplicationController
+
+	def index
+		@items = Item.all
+	end
+	
 	def show
-		render '/views/itemdetails/show.html.erb'
+		@item = Item.find(params[:id])
+		# render '/views/itemdetails/show.html.erb'
 	end
 end

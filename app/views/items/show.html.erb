@@ -1,0 +1,12 @@
+<div class = "container">
+	<div class = "col-xs-12 col-md-12 col-offset-md-3">
+		<div class = "panel panel-default iDetails">
+			<% @item.photos do |i| %>
+				<%= image_tag @item.photos[i].url %>
+			<% end %>
+				
+				<h1> Hello </h1>
+			
+		</div>
+	</div>
+</div>

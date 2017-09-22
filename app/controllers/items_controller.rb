@@ -1,13 +1,15 @@
 class ItemsController < ApplicationController
 
 before_action :authenticate_user!, only: [:new, :create]
+before_action :is_owner?, only: [:edit, :update]
 
 	def index
-		@items = Item.order("created_at DESC")
+		@items = Item.all.order("created_at DESC")
 	end
 
 	def new
 		@item = Item.new
+		@item.save!
 	end
 
 
@@ -39,14 +41,17 @@ before_action :authenticate_user!, only: [:new, :create]
 	end
 
 	def show
-		render template: "itemdetails/show"
+		@item = Item.find(params[:id])
 	end
 
 	private
 
 	def item_params
-		
-		params.require(:item).permit(:item_name, :item_detail, :item_price, :photo)
+		params.require(:item).permit(:item_name, :item_detail, :item_price, photos: [])
+	end
+
+	def is_owner?
+  		redirect_to root_path if Item.find(params[:id]).user != current_user
 	end
 
 end

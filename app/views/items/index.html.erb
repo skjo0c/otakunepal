@@ -1,3 +1,9 @@
+<%if user_signed_in?%>
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal", style= "margin-bottom: 20px">
+    Add Items
+  </button>
+<%end%>
+
 <%= render partial: "layouts/modal"%>
 
 <%= render partial: "layouts/itemviewer"%>
