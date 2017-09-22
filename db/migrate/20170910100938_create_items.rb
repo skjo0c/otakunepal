@@ -6,7 +6,6 @@ class CreateItems < ActiveRecord::Migration[5.0]
       t.text :item_name, null: false
       t.text :item_detail, null: false
       t.integer :item_price, null: false
-      t.string :photo
       t.boolean :rented, default: false
     end
     add_index :items, :user_id

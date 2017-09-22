@@ -47,7 +47,7 @@ before_action :is_owner?, only: [:edit, :update]
 	private
 
 	def item_params
-		params.require(:item).permit(:item_name, :item_detail, :item_price, photos: [])
+		params.require(:item).permit(:item_name, :item_detail, :item_price, {photos: []})
 	end
 
 	def is_owner?

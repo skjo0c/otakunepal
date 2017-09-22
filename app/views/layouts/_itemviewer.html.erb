@@ -36,9 +36,16 @@
           
           <!--button for renting-->
           <% if user_signed_in? %>
-            <%= link_to 'Rent', '#rentModal', class: 'btn btn-success', "data-toggle" => "modal", "data-target" => "#rentModal"%>
-            <%= render partial: "layouts/rentModal"%>
-            <%= link_to 'Edit', edit_item_path(item), class: 'btn btn-warning' %>
+            <% if item.user != current_user %>
+              <%= link_to 'Rent', '#rentModal', class: 'btn btn-success', "data-toggle" => "modal", "data-target" => "#rentModal"%>
+              <%= render partial: "layouts/rentModal"%>
+            <% end %>
+
+            <% if item.user == current_user %>
+              <%= link_to 'Edit', edit_item_path(item), class: 'btn btn-warning' %>
+              <%= link_to 'Delete', item_path(item), class: 'btn btn-danger' %>
+            <% end %>
+
           <% end %>
 
         </div>
