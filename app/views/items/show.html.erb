@@ -1,14 +1,11 @@
-<div class = "container">
-	<div class = "col-xs-12 col-md-12 col-offset-md-3">
-		<div class = "panel panel-default iDetails">
-			<% @item.photos.each do |i| %>
-				<%= image_tag @item.photos[i].url %>
-			<% end %>
-				<%= image_tag @item.photos[0].url %>
-				<%= image_tag @item.photos[1].url %>
-				<%= image_tag @item.photos[2].url %>
-				<h1> Hello </h1>
-			
+<% if user_signed_in? %>
+	<div class = "container">
+		<div class = "col-xs-12 col-md-12 col-offset-md-3">
+			<div class = "panel panel-default iDetails">
+				<% @item.photos.each do |i| %>
+					<div class = "images"><%= image_tag i.url %></div>
+				<% end %>			
+			</div>
 		</div>
 	</div>
-</div>
+<%end%>
