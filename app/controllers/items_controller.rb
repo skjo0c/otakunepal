@@ -4,6 +4,7 @@ before_action :authenticate_user!, only: [:new, :create]
 before_action :is_owner?, only: [:edit, :update]
 
 	def index
+		@item = Item.new
 		@items = Item.all.order("created_at DESC")
 	end
 
@@ -43,6 +44,13 @@ before_action :is_owner?, only: [:edit, :update]
 	def show
 		@item = Item.find(params[:id])
 	end
+
+	def destroy
+		@item = Item.find(params[:id])
+		@item.destroy
+		redirect_to root_path
+	end
+
 
 	private
 

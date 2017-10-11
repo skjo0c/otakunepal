@@ -5,6 +5,7 @@ class AcquiretimesController < ApplicationController
 	end
 
 	def create
+		
 		@item = Item.find(params[:item_id])
 
 		@acquiretime = @item.acquiretime.create(time_params)

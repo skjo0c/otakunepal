@@ -6,7 +6,7 @@
         <h4 class="modal-title" id="myModalLabel">Add item here</h4>
       </div>
       <div class="modal-body">
-        <%= simple_form_for Item.new do |f| %>
+        <%= simple_form_for @item do |f| %>
           <div class = "add_item_form">            
               <%= f.input :item_name %>
               <%= f.input :item_detail%>

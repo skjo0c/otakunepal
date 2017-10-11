@@ -3,7 +3,7 @@
 		<div class = "col-xs-12 col-md-12 col-offset-md-3">
 			<div class = "panel panel-default iDetails">
 				<% @item.photos.each do |i| %>
-					<div class = "images"><%= image_tag i.url %></div>
+					<%= image_tag i.url %>
 				<% end %>			
 			</div>
 		</div>
