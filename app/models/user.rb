@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   validates_uniqueness_of :username
   has_many :items
+  has_many :acquiretimes
   mount_uploader :photo, PhotoUploader
 end

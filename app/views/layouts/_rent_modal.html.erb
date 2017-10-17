@@ -6,9 +6,9 @@
         <h4 class="modal-title" id="rentModalLabel">Add item here</h4>
       </div>
       <div class="modal-body">
-        <%= simple_form_for Acquiretime.new, url: item_acquiretimes_path(item) do |f| %>
+        <%= simple_form_for Acquiretime.create, url: item_acquiretimes_path(item) do |f| %>
           <div class = "add_item_form">            
-              <%= f.input :required_time, as: :date_field, html5: true %>
+              <%= f.input :required_time, as: :date, html5: true %>
               <%= f.input :return_time, as: :date, html5: true  %>
           </div>
           <div class="modal-footer">

@@ -1,7 +1,12 @@
 class AcquiretimesController < ApplicationController
 
+	def index
+		@acquiretime = Acquiretime.new
+	end
+
 	def new
 		@acquiretime = Acquiretime.new
+		@acquiretime.save!
 	end
 
 	def create

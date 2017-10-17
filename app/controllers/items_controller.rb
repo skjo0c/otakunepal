@@ -42,7 +42,11 @@ before_action :is_owner?, only: [:edit, :update]
 	end
 
 	def show
-		@item = Item.find(params[:id])
+		if user_signed_in?
+			@item = Item.find(params[:id])
+		else
+			redirect_to new_user_session_path
+		end
 	end
 
 	def destroy
