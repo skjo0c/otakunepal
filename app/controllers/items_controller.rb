@@ -5,11 +5,13 @@ before_action :is_owner?, only: [:edit, :update]
 
 	def index
 		@item = Item.new
+		@acquiretime = Acquiretime.new
 		@items = Item.all.order("created_at DESC")
 	end
 
 	def new
 		@item = Item.new
+		@acquiretime = Acquiretime.new
 		@item.save!
 	end
 
