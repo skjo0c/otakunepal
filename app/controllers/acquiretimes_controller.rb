@@ -10,11 +10,12 @@ class AcquiretimesController < ApplicationController
 		@item = Item.find(params[:item_id])
 
 		@acquiretime = @item.acquiretimes.create(time_params)
-
+		@acquiretime.save
 		if @acquiretime.valid?
-			flash[:success] = "You have successfully rented the item"
-			redirect_to root_path
+			flash[:success] = "You have successfully rented the item"	
+			redirect_to "/"
 		else
+			@acquiretime.errors.full_message
 			flash[:alert] = "Woops! Looks like there has been error. Please enter valid data."
 			redirect_to root_path
 		end
