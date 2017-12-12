@@ -14,3 +14,47 @@
 .ItemImages{
 	
 }
+
+.signup-form{
+	background: #eae8e8;
+	background-color: #ffffff;
+	width: 350px;
+	height: 550px;
+	border: 1px solid #efefef;
+
+}
+
+.signup-image{
+	height: 500px;
+}
+
+.text-signup{
+	font-family: 'Berkshire Swash', cursive;
+}
+
+.fields{
+	margin-bottom: 5px;
+}
+
+.input-from{
+	border: 1px solid #dbdbdb;
+	border-radius: 3px;
+	color: #262626;
+	font-size: 14px;
+	padding: 9px 8px 7px;
+	width: 268px;
+	height:33px;
+	margin:0 40px 6px;
+}
+
+.signup-button{
+	border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    background: #3897f0;
+    border-color: #3897f0;
+    color: #fff;
+    width: 268px;
+	height:31px;
+	margin:4% 0 0 0;
+}
