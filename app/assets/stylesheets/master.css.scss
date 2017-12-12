@@ -21,7 +21,14 @@
 	width: 350px;
 	height: 550px;
 	border: 1px solid #efefef;
+}
 
+.signin-form{
+	background: #eae8e8;
+	background-color: #ffffff;
+	width: 350px;
+	height: 450px;
+	border: 1px solid #efefef;
 }
 
 .signup-image{
@@ -30,6 +37,11 @@
 
 .text-signup{
 	font-family: 'Berkshire Swash', cursive;
+}
+
+.text-signin{
+	font-family: 'Berkshire Swash', cursive;
+	margin-bottom: 30px;	
 }
 
 .fields{
@@ -48,6 +60,18 @@
 }
 
 .signup-button{
+	border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    background: #3897f0;
+    border-color: #3897f0;
+    color: #fff;
+    width: 268px;
+	height:31px;
+	margin:4% 0 0 0;
+}
+
+.signin-button{
 	border-radius: 3px;
     border-style: solid;
     border-width: 1px;
