@@ -10,6 +10,7 @@
           <div class = "add_item_form">            
               <%= f.input :required_time, as: :date, html5: true %>
               <%= f.input :return_time, as: :date, html5: true  %>
+              <%= f.hidden_field :user_id, value: current_user.id %>
           </div>
           <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

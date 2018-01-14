@@ -6,16 +6,15 @@ class AcquiretimesController < ApplicationController
 	end
 
 	def create
-		
+		binding.pry
 		@item = Item.find(params[:item_id])
 
 		@acquiretime = @item.acquiretimes.create(time_params)
-		@acquiretime.save
+
 		if @acquiretime.valid?
-			flash[:success] = "You have successfully rented the item"	
-			redirect_to "/"
+			flash[:success] = "You have successfully rented the item"
+			redirect_to root_path
 		else
-			@acquiretime.errors.full_message
 			flash[:alert] = "Woops! Looks like there has been error. Please enter valid data."
 			redirect_to root_path
 		end
@@ -24,6 +23,6 @@ class AcquiretimesController < ApplicationController
 	private
 
 	def time_params
-		params.require(:acquiretime).permit(:required_time, :return_time)
+		params.require(:acquiretime).permit(:required_time, :return_time, :user_id)
 	end
 end
