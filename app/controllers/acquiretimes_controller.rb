@@ -6,7 +6,7 @@ class AcquiretimesController < ApplicationController
 	end
 
 	def create
-		binding.pry
+		# binding.pry
 		@item = Item.find(params[:item_id])
 
 		@acquiretime = @item.acquiretimes.create(time_params)
