@@ -6,9 +6,9 @@
           <h1 class="item_name"><%= item.item_name %></h1>
         </div>
         <div class="panel-body">
-        
+
           <blockquote>
-           
+
            <h4>Price: <%= item.item_price %></h4>
 
 
@@ -24,7 +24,7 @@
                 <div id="collapse_<%= j %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                   <div class="panel-body">
                     <%= item.item_detail %>
-                    <%= link_to 'Click here for images...', item_path(item.id)%> 
+                    <%= link_to 'Click here for images...', item_path(item.id)%>
                             <!--goes to itemdetails/show.html.erb-->
                   </div>
                 </div>
@@ -33,12 +33,13 @@
           </blockquote>
 
           <br>
-          
+
           <!--button for renting-->
           <% if user_signed_in? %>
-          
+
             <% if item.user != current_user %>
-              <%= link_to 'Rent', '#rentModal', class: 'btn btn-success', "data-toggle" => "modal", "data-target" => "#rentModal"%>
+              <%= link_to 'Rent', "#rentModal_#{item.id}", class: 'btn btn-success', "data-toggle" => "modal", "data-target" => "#rentModal_#{item.id}"%>
+              <%= item.id %>
               <%= render partial: "layouts/rent_modal", locals: { current_item: item } %>
             <% end %>
 
