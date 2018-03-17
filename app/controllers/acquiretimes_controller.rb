@@ -6,7 +6,7 @@ class AcquiretimesController < ApplicationController
 	end
 
 	def create
-		
+
 		@item = Item.find(params[:item_id])
 
 		@acquiretime = @item.acquiretimes.create(time_params)
@@ -23,6 +23,6 @@ class AcquiretimesController < ApplicationController
 	private
 
 	def time_params
-		params.require(:acquiretime).permit(:required_time, :return_time)
+		params.require(:acquiretime).permit(:item_id, :required_time, :return_time)
 	end
 end
