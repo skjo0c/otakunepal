@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :items do
   	resources :acquiretimes
+  	resources :rentbids, only: :index
   end
-
 end
  

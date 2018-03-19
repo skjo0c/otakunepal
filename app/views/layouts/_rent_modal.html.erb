@@ -1,4 +1,4 @@
-<div class="modal fade" id="rentModal" tabindex="-1" role="dialog" aria-labelledby="rentModalLabel">
+<div class="modal fade" id="rentModal_<%= current_item.id %>" tabindex="-1" role="dialog" aria-labelledby="rentModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -6,8 +6,9 @@
         <h4 class="modal-title" id="rentModalLabel">Add item here</h4>
       </div>
       <div class="modal-body">
+        <h1><%= current_item.id %></h1>
         <%= simple_form_for [current_item, @acquiretime] do |f| %>
-          <div class = "add_item_form">            
+          <div class = "add_item_form">
               <%= f.input :required_time, as: :date, html5: true %>
               <%= f.input :return_time, as: :date, html5: true  %>
               <%= f.hidden_field :user_id, value: current_user.id %>

@@ -1,3 +1,11 @@
+.rent_bids{
+	text-align: center;	
+}
+
+.items{
+	margin:0;
+}
+
 .bname{
 	font-family: 'Zilla Slab Highlight', cursive;
 }
@@ -8,11 +16,19 @@
 
 .iDetails{
 	@media screen and (min-width: 480px) {
-   		margin-top: 100px;
+   		margin-top: 50px;
 	}
 }
 .ItemImages{
 	
+}
+
+.login{
+	margin: 0;
+}
+
+.signup{
+	margin: 0;
 }
 
 .signup-form{
@@ -42,6 +58,11 @@
 .text-signin{
 	font-family: 'Berkshire Swash', cursive;
 	margin-bottom: 30px;	
+}
+
+.profile_menu{
+	left: -100px;
+	text-align: center;
 }
 
 .fields{
@@ -81,4 +102,13 @@
     width: 268px;
 	height:31px;
 	margin:4% 0 0 0;
+}
+
+.thumb_image{
+	margin: 10px;	
+}
+
+.thumbnail_item_image{
+	height:200px;
+	width: 200px;
 }
