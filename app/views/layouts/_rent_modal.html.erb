@@ -6,7 +6,6 @@
         <h4 class="modal-title" id="rentModalLabel">Add item here</h4>
       </div>
       <div class="modal-body">
-        <h1><%= current_item.id %></h1>
         <%= simple_form_for [current_item, @acquiretime] do |f| %>
           <div class = "add_item_form">
               <%= f.input :required_time, as: :date, html5: true %>
