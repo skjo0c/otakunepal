@@ -50,7 +50,7 @@
             <% if item.user == current_user %>
               <%= link_to 'Edit', edit_item_path(item), class: 'btn btn-warning' %>
               <%= link_to 'Delete', item_path(item), class: 'btn btn-danger', method: :delete %>
-              <%= link_to 'View Bids', item_path(item), class: 'btn btn-primary'%>
+              <%= link_to 'View Bids', item_acquiretimes_path(item), class: 'btn btn-primary'%>
             <% end %>
 
           <% end %>

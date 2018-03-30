@@ -1,0 +1,19 @@
+<% @acquiretimes.each do |i| %>
+
+	<div class="allBids">
+
+		<span class="user">
+			<strong> Bided By </strong>	: 	<%= i.user_id %>
+		</span>
+
+		<span class="required">
+			<strong> Required Time</strong>	: 	<%= i.required_time %>
+		</span>
+		
+		<span class="return">
+			<strong> Return Time</strong>	: 	<%= i.return_time %> <br />
+		</span>	
+
+	</div>
+
+<% end %>

@@ -20,6 +20,12 @@ class AcquiretimesController < ApplicationController
 		end
 	end
 
+	def index
+		@item = Item.find(params[:item_id])
+		@current_item = @item.id
+		@acquiretimes = Acquiretime.where(:item_id => @current_item)
+	end
+
 	private
 
 	def time_params
