@@ -11,7 +11,7 @@ before_action :is_owner?, only: [:edit, :update]
 
 	def new
 		@item = Item.new
-		@acquiretime = Acquiretime.new
+		# @acquiretime = Acquiretime.new
 		@item.save!
 	end
 

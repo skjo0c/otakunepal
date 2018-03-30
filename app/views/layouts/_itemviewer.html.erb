@@ -1,4 +1,4 @@
-<div class="row">
+  <div class="row items">
   <% @items.each_with_index do |item, j| %>
     <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="panel panel-default">
@@ -38,14 +38,18 @@
           <% if user_signed_in? %>
 
             <% if item.user != current_user %>
+
               <%= link_to 'Rent', "#rentModal_#{item.id}", class: 'btn btn-success', "data-toggle" => "modal", "data-target" => "#rentModal_#{item.id}"%>
-              <%= item.id %>
               <%= render partial: "layouts/rent_modal", locals: { current_item: item } %>
+
             <% end %>
+
+          <!-- button for edit and delete -->
 
             <% if item.user == current_user %>
               <%= link_to 'Edit', edit_item_path(item), class: 'btn btn-warning' %>
               <%= link_to 'Delete', item_path(item), class: 'btn btn-danger', method: :delete %>
+              <%= link_to 'View Bids', item_acquiretimes_path(item), class: 'btn btn-primary'%>
             <% end %>
 
           <% end %>
